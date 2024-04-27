@@ -1,5 +1,5 @@
 /*
-* Project2_Servo.c
+* EE4524_project2.c
 *
 * Created: 21/03/2019 11:30:31
 * Author : Reece Gavin 17197589
