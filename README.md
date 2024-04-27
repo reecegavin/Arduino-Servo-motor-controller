@@ -15,3 +15,15 @@ The program responds to the following single character commands received over th
 'C' or 'c': Continuously report the Timer input period in microseconds.
 ‘E’ or ‘e’: Stop continuous reporting of Timer input.
 ‘A’ or ‘a’: Report the ADC2 conversion result. This is the ADC value.
+V’ or ‘v’: Report the ADC2 conversion result in mV. You must convert the ADC value to mV
+'W' or 'w':   Continuously report the ADC2 conversion result in mV.
+‘Q’ or ‘q’: Stop continuous reporting of ADC2 input.
+'D' or 'd': Report servomotor position to the user, in units of degrees.
+‘S’ or ‘s’: Report the current value of the OCR2A register to the user.
+‘R’ or ‘r’: The servomotor position is set by the ADC2 reading.
+‘Y’ or ‘y’: The servomotor position is set by the character received over the USART.
+If the servomotor is being controlled by the ADC2 reading, use the following technique:
+0 reading – 90 degrees, 1023 reading – 180 degrees. Values between 0 and 1023 should be scaled as 16 equally stepped positions, e.g. ADC reading 0-63 – 90 degrees, ADC reading 64-127 – 90 + (90/16) degrees etc
+All other characters are ignored.
+Note: The data reported to the user is in ASCII format, and should be formatted with some text to show what is being displayed. (e.g. “Timer period = 103us” or “Voltage = 2345 mV”).
+
