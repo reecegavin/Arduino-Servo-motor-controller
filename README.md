@@ -8,14 +8,14 @@ The Timer/Counter1 input, ICP1, is connected to a 555 Timer, which produces a pe
 
 The program responds to the following single character commands received over the serial port:
 
-‘1’ to ‘8’: Set the servomotor position using the OC2RA register, to an angular position between 90 degrees (1ms PWM on time) and 180 degrees (2ms PWM on time). You must convert the char value to an integer and set the PWM based on this value. If the servomotor is being set by the ADC reading, do not change the servo position, but send a message to the user, saying that the setting is controlled by the ADC.
+‘1’ to ‘8’: Set the servomotor position using the OC2RA register, to an angular position between 90 degrees (1ms PWM on time) and 180 degrees (2ms PWM on time). The char value is converted to an integer and the PWM is set based on this value. If the servomotor is being set by the ADC reading, do not change the servo position, but send a message to the user, saying that the setting is controlled by the ADC.
 ‘T’ or ‘t’: Report the period of the 555 Timer in microseconds.
 ‘L’ or ‘l’: Report the time taken by the low pulse of the 555 Timer signal in microseconds
 ‘H’ or ‘h’: Report the time taken by the high pulse of the 555 Timer signal in microseconds
 'C' or 'c': Continuously report the Timer input period in microseconds.
 ‘E’ or ‘e’: Stop continuous reporting of Timer input.
 ‘A’ or ‘a’: Report the ADC2 conversion result. This is the ADC value.
-V’ or ‘v’: Report the ADC2 conversion result in mV. You must convert the ADC value to mV
+V’ or ‘v’: Report the ADC2 conversion result in mV. The ADC value is converted to mV
 'W' or 'w':   Continuously report the ADC2 conversion result in mV.
 ‘Q’ or ‘q’: Stop continuous reporting of ADC2 input.
 'D' or 'd': Report servomotor position to the user, in units of degrees.
